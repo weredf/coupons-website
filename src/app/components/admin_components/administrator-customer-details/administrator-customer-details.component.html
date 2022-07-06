@@ -1,0 +1,12 @@
+<h1>Customer Details</h1>
+
+<h3>first name: <input [readonly]="!read" type="text" [(ngModel)]="customer.firstName"></h3>
+<h3>last name: <input [readonly]="!read" type="text" [(ngModel)]="customer.lastName"></h3>
+<h3>email: <input [readonly]="!read" type="text" [(ngModel)]="customer.email"></h3>
+<h3>password: <input [readonly]="!read" type="text" [(ngModel)]="customer.password"></h3>
+<br>
+<input type="checkbox" [(ngModel)]="read"> enable update
+<br>
+<button (click)="update()" [disabled]="!read">Update this customer</button>
+<br><br>
+<button (click)="delete()">Delete this customer</button>

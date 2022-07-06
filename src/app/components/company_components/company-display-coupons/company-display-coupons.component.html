@@ -1,0 +1,26 @@
+<h3>All Coupons</h3>
+<br>
+<ng-template #loading>
+    <br><br>
+    <img src="assets/images/loading.gif" alt="">
+    <br>
+    Data is being loaded
+</ng-template>
+
+<table *ngIf="coupons; else loading">
+    <caption>Click on coupon to edit</caption>
+    <tr>
+        <th>category</th>
+        <th>title</th>
+        <th>description</th>
+        <th>amount</th>
+        <th>price</th>
+    </tr>
+    <tr *ngFor="let c of coupons" routerLink="/api/COMPANY/coupon-details/{{c.id}}">
+        <td>{{c.category}}</td>
+        <td>{{c.title}}</td>
+        <td>{{c.description}}</td>
+        <td>{{c.amount}}</td>
+        <td>{{c.price}}</td>
+    </tr>
+</table>

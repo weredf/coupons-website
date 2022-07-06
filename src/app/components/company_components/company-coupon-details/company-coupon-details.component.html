@@ -1,0 +1,16 @@
+<h1>Coupon Details</h1>
+
+<h3>category: <input [readonly]="!read" type="text" [(ngModel)]="coupon.category"></h3>
+<h3>title: <input [readonly]="!read" type="text" [(ngModel)]="coupon.title"></h3>
+<h3>description: <input [readonly]="!read" type="text" [(ngModel)]="coupon.description"></h3>
+<h3>start date: <input [readonly]="!read" type="date" [(ngModel)]="coupon.startDate"></h3>
+<h3>end date: <input [readonly]="!read" type="date" [(ngModel)]="coupon.endDate"></h3>
+<h3>amount: <input [readonly]="!read" type="number" [(ngModel)]="coupon.amount"></h3>
+<h3>price: <input [readonly]="!read" type="number" [(ngModel)]="coupon.price"></h3>
+
+<br>
+<input type="checkbox" [(ngModel)]="read"> enable update
+<br>
+<button (click)="update()" [disabled]="!read">Update this coupon</button>
+<br><br>
+<button (click)="delete()">Delete this coupon</button>

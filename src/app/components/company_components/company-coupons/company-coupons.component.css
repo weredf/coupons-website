@@ -1,0 +1,19 @@
+input{
+    display: block;
+    margin: 10px;
+    font-size: large;
+    width: 300px;
+}
+button{
+    display: block;
+    margin: 10px;
+    font-size: large;
+    margin-left: 40%;
+}
+form{
+    width: fit-content;
+    margin: auto;
+}
+span{
+    color: red;
+}

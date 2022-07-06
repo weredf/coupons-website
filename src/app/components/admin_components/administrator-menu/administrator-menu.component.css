@@ -1,0 +1,21 @@
+:host{ /* 'this' */
+    display: block;
+    height: 100%;
+    overflow: auto;
+}
+a{
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin: 10px;
+    text-align: left;
+}
+a:hover{
+    border-left: solid 3px turquoise;
+    font-weight: 600;
+    color: rgb(17, 107, 98);
+}
+.active-link{
+    font-weight: bold;
+}

@@ -1,0 +1,22 @@
+<h3>All Customers</h3>
+<br>
+<ng-template #loading>
+    <br><br>
+    <img src="assets/images/loading.gif" alt="">
+    <br>
+    Data is being loaded
+</ng-template>
+
+<table *ngIf="customers; else loading">
+    <caption>Click on customer to edit</caption>
+    <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>email</th>
+    </tr>
+    <tr *ngFor="let c of customers" routerLink="/api/ADMINISTRATOR/customer-details/{{c.id}}">
+        <td>{{c.firstName}}</td>
+        <td>{{c.lastName}}</td>
+        <td>{{c.email}}</td>
+    </tr>
+</table>

@@ -1,0 +1,11 @@
+<h1>Company Details</h1>
+
+<h3>name: <input [readonly]="!read" type="text" [(ngModel)]="company.name"></h3>
+<h3>email: <input [readonly]="!read" type="text" [(ngModel)]="company.email"></h3>
+<h3>password: <input [readonly]="!read" type="text" [(ngModel)]="company.password"></h3>
+<br>
+<input type="checkbox" [(ngModel)]="read"> enable update
+<br>
+<button (click)="update()" [disabled]="!read">Update this company</button>
+<br><br>
+<button (click)="delete()">Delete this company</button>

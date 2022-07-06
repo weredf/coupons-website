@@ -1,0 +1,19 @@
+<h3>Add Company</h3>
+
+<form action="" #formInfo="ngForm">
+    <input type="hidden" [(ngModel)]="company.id" name="id" #idInfo="ngModel" value="0" disabled="true">
+    <input type="text" placeholder="name" [(ngModel)]="company.name" name="name" required #nameInfo="ngModel">
+    <span *ngIf="nameInfo.errors?.['required'] && nameInfo.touched">name is missing</span>
+    <span *ngIf="nameInfo.errors?.['pattern'] && nameInfo.touched">name must start with a capital letter</span>
+    
+    <input type="text" placeholder="email" [(ngModel)]="company.email" name="email" required #emailInfo="ngModel">
+    <span *ngIf="emailInfo.errors?.['required'] && emailInfo.touched">email is missing</span>
+    
+    <input type="text" placeholder="password" [(ngModel)]="company.password" name="password" required #passwordInfo="ngModel">
+    <span *ngIf="passwordInfo.errors?.['required'] && passwordInfo.touched">password is missing</span>
+    <!-- <span *ngIf="stockInfo.errors?.['max'] && stockInfo.dirty">stock is too high, max is {{stockInfo.errors?.['max'].max}}</span>
+    <span *ngIf="stockInfo.errors?.['min'] && stockInfo.touched">stock is too low, min is {{stockInfo.errors?.['min'].min}}</span> -->
+    <!-- <span *ngIf="stockInfo.invalid && stockInfo.touched">stock is missing</span> -->
+    
+    <button (click)="addCompany()" [disabled]="formInfo.invalid">Add</button>
+</form>

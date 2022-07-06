@@ -1,0 +1,16 @@
+<div id="title">
+    <p>Sign in to your account</p>
+</div>
+<div id="login">
+    <input class="clear" #email type="text" placeholder="email">
+    <input class="clear" #password type="password" placeholder="password">
+    <select class="clear" (change)="SetClientType($event)">
+        <option value="">Select</option>
+        <option value="ADMINISTRATOR">Administrator</option>
+        <option value="COMPANY">Company</option>
+        <option value="CUSTOMER">Customer</option>
+    </select>
+
+    <!-- <input #clientTypeString placeholder="ADMINISTRATOR or COMPANY or CUSTOMER"> -->
+    <button class="clear" (click)="login(email.value, password.value)">Login</button>
+</div>

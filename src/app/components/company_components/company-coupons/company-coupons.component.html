@@ -1,0 +1,38 @@
+<h3>Add Coupon</h3>
+
+<form action="" #formInfo="ngForm">
+    <input type="hidden" [(ngModel)]="coupon.id" name="id" #idInfo="ngModel" value="0" disabled="true">
+    <input type="hidden" [(ngModel)]="coupon.company" name="company" #idInfo="ngModel" value="0" disabled="true">
+    
+    <input type="text" placeholder="category" [(ngModel)]="coupon.category" name="category" required #categoryInfo="ngModel">
+    <span *ngIf="categoryInfo.errors?.['required'] && categoryInfo.touched">category is missing</span>
+    
+    <input type="text" placeholder="title" [(ngModel)]="coupon.title" name="title" required #titleInfo="ngModel">
+    <span *ngIf="titleInfo.errors?.['required'] && titleInfo.touched">title is missing</span>
+    
+    <input type="text" placeholder="description" [(ngModel)]="coupon.description" name="description" required #descriptionInfo="ngModel">
+    <span *ngIf="descriptionInfo.errors?.['required'] && descriptionInfo.touched">description is missing</span>
+    
+    <input type="date" placeholder="start date" [(ngModel)]="coupon.startDate" name="startDate" required #startDateInfo="ngModel">
+    <span *ngIf="startDateInfo.errors?.['required'] && startDateInfo.touched">start date is missing</span>
+   
+    <input type="date" placeholder="end date" [(ngModel)]="coupon.endDate" name="endDate" required #endDateInfo="ngModel">
+    <span *ngIf="endDateInfo.errors?.['required'] && endDateInfo.touched">end date is missing</span>
+
+    <input type="number" placeholder="amount" [(ngModel)]="coupon.amount" name="amount" required #amountInfo="ngModel">
+    <span *ngIf="amountInfo.errors?.['required'] && amountInfo.touched">amount is missing</span>
+    
+    <input type="number" placeholder="price" [(ngModel)]="coupon.price" name="price" required #priceInfo="ngModel">
+    <span *ngIf="priceInfo.errors?.['required'] && priceInfo.touched">price is missing</span>
+    
+    <input type="text" placeholder="image" [(ngModel)]="coupon.image" name="image" required #imageInfo="ngModel">
+    <span *ngIf="imageInfo.errors?.['required'] && imageInfo.touched">image is missing</span>
+
+    <!-- <input type="image" placeholder=""> -->
+
+    <!-- <span *ngIf="stockInfo.errors?.['max'] && stockInfo.dirty">stock is too high, max is {{stockInfo.errors?.['max'].max}}</span>
+    <span *ngIf="stockInfo.errors?.['min'] && stockInfo.touched">stock is too low, min is {{stockInfo.errors?.['min'].min}}</span> -->
+    <!-- <span *ngIf="stockInfo.invalid && stockInfo.touched">stock is missing</span> -->
+    
+    <button (click)="addCoupon()" [disabled]="formInfo.invalid">Add</button>
+</form>
